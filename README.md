@@ -10,11 +10,11 @@ I made it because I wanted a little more info when a model couldn't save because
 user.email = nil
 user.profile.first_name = nil
 user.valid?
-> false
+#=> false
 user.errors.messages
-> {:profile=>["is invalid"], :email=>["can't be blank"]}
+#=> {:profile=>["is invalid"], :email=>["can't be blank"]}
 ValidationErrorSerializer.serialize(user)
-> {:profile=>{:first_name=>["can't be blank"]}, :email=>["can't be blank"]}
+#=> {:profile=>{:first_name=>["can't be blank"]}, :email=>["can't be blank"]}
 ```
 
 ## Usage
