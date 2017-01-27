@@ -1,4 +1,4 @@
-# validation-error-serializer
+# mongoid-validation-error-serializer
 Ruby module to serialize errors for Mongoid models in Rails
 
 ## Usage
