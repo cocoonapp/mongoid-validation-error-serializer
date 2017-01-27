@@ -3,18 +3,18 @@ Ruby module to serialize errors for Mongoid models in Rails. Probably also works
 
 I made it because I wanted a little more info when a model couldn't save because of errors in it's child models.
 
-```
+```ruby
 # This assumes a Profile model which belongs_to a User model 
 # and validation rules for profile.first_name and user.email
 # that check for their presence
-> user.email = nil
-> user.profile.first_name = nil
-> user.valid?
-=> false
-> user.errors.messages
-=> {:profile=>["is invalid"], :email=>["can't be blank"]}
-> ValidationErrorSerializer.serialize(user)
-=> {:profile=>{:first_name=>["can't be blank"]}, :email=>["can't be blank"]}
+user.email = nil
+user.profile.first_name = nil
+user.valid?
+> false
+user.errors.messages
+> {:profile=>["is invalid"], :email=>["can't be blank"]}
+ValidationErrorSerializer.serialize(user)
+> {:profile=>{:first_name=>["can't be blank"]}, :email=>["can't be blank"]}
 ```
 
 ## Usage
